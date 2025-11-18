@@ -27,7 +27,6 @@ CREATE TABLE IF NOT EXISTS Books(
                title TEXT NOT NULL,
                total_copies INTEGER,
                available_copies INTEGER,
-               is_Available INTEGER DEFAULT 1,
                author_id INTEGER,
                genre_id INTEGER,
                FOREIGN KEY (author_id) REFERENCES Author(id),
@@ -42,7 +41,7 @@ CREATE TABLE IF NOT EXISTS Members(
                username VARCHAR(20) NOT NULL UNIQUE,
                password TEXT NOT NULL,
                contact TEXT NOT NULL,
-               email VARCHAR(20),
+               email VARCHAR(50),
                role TEXT DEFAULT 'user',
                join_date DATE)
 
@@ -844,6 +843,7 @@ def login():
 
         
 login()
+
 
 
 
